@@ -13,6 +13,8 @@ Add the following two hosts IP address..
 # ansible -m shell -a "service httpd status" webservers > service_status.txt
 # ansible -m shell -a "init 0" webservers
 # ansible -m shell -a "/sbin/service ntpd status" devhosts -s -k
+#ansible db:webserver -m shell -a "uptime"
+#ansible db:webserver -m shell -a "free -m"
 
 
 $ ansible -m shell -a "/sbin/service httpd status" 192.168.1.32 -s
