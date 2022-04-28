@@ -5,7 +5,16 @@ Add the following two hosts IP address..
 192.168.87.156
 192.168.87.157
 
+Install Ansible 
 
+yum install python python-pip python-setuptools*
+curl -O https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+pip install boto
+pip install boto3
+
+python --version
+pip --version
 # ansible -m ping webservers
 # ansible -m ping -all
 # ansible -m command -a "df -h" webservers
