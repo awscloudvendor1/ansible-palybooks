@@ -13,6 +13,43 @@ python get-pip.py
 pip install boto
 pip install boto3
 
+Ansible Modules:
+-------------------------
+
+Ping Module:
+ansible testservers -m ping
+
+File module: Creating and deleting directory
+
+ansible testservers -m file -a "dest=/root/file state=directory"
+ansible testservers -m file -a "dest=/root/file mode=755 owner=root group=root state=directory"
+ansible testservers -m file -a "dest=/root/file state=absent"
+
+Copy Module:
+
+ansible testservers -m copy -a "src=/root/file/text.txt dest=/root/"
+
+Shell Module:
+
+ansible testservers -m shell -a "mkdir test"
+
+Yum Module:
+
+ansible testservers -m yum -a "name=wget state=present"
+ansible testservers -m yum -a "name=httpd state=present"
+
+
+Service Module:
+
+ansible testservers -m service -a "name=httpd state=restarted"
+ansible testservers -m service -a "name=httpd state=started"
+ansible testservers -m service -a "name=httpd state=stopped"
+
+Restarting the servers:
+
+ansible testservers -a "/sbin/reboot"
+
+
 python --version
 pip --version
 # ansible -m ping webservers
